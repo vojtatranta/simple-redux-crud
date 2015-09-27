@@ -10,7 +10,7 @@ export function createType(actionType, stateKey) {
 	return `${actionType}_${stateKey}`
 }
 
-export default function(stateKey, conf = {}) {
+export default function createCRUDActions(stateKey, conf = {}) {
 	const { asyncAdd, asyncEdit, asyncDelete } = conf
 
 	return {
@@ -44,7 +44,7 @@ export default function(stateKey, conf = {}) {
 				})
 
 				if (asyncEdit && !optimisticOnly) {
-					dispatch(asyncEdit(id, index, toUpdate, optimistic))
+					dispatch(asyncEdit(index, id, toUpdate, optimistic))
 				}
 
 				if (optimistic) {
@@ -67,7 +67,7 @@ export default function(stateKey, conf = {}) {
 				})
 
 				if (asyncDelete && !optimisticOnly) {
-					dispatch(asyncDelete(id, index, deletePayload, optimistic))
+					dispatch(asyncDelete(index, id, deletePayload, optimistic))
 				}
 
 				if (optimistic) {

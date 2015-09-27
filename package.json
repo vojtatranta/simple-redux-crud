@@ -1,9 +1,12 @@
 {
-  "name": "react-simple-crud",
+  "name": "simple-redux-crud",
   "version": "0.0.1",
   "description": "Simple Redux CRUD for your app",
   "main": "./lib/index.js",
-  "repository": "https://github.com/vojtatranta/redux-simple-crud.git",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vojtatranta/simple-redux-crud.git"
+  },
   "directories": {
     "test": "test"
   },
@@ -15,6 +18,9 @@
     "react",
     "crud"
   ],
+  "dependencies": {
+    "redux": "^1.0.1"
+  },
   "author": "vojta.tranta@gmail.com",
   "license": "ISC"
 }

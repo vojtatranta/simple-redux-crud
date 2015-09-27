@@ -10,7 +10,7 @@ function removeIndexFromArray(index, array) {
 	return ret
 }
 
-export default function(stateKey, initialState = []) {
+export default function createCRUDReducer(stateKey, initialState = []) {
 	return function(state = initialState, action) {
 		let newState
 		switch (action.type) {
