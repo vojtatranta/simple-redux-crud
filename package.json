@@ -11,7 +11,9 @@
     "test": "test"
   },
   "scripts": {
-    "test": "npm test"
+    "test": "npm test",
+    "compile": "babel -d ./lib/ ./src/",
+    "prepublish": "npm run compile"
   },
   "keywords": [
     "redux",
@@ -20,6 +22,9 @@
   ],
   "dependencies": {
     "redux": "^1.0.1"
+  },
+  "devDependencies": {
+    "babel": "^5.8.23"
   },
   "author": "vojta.tranta@gmail.com",
   "license": "ISC"
