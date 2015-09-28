@@ -10,7 +10,7 @@ export function createType(actionType, stateKey) {
 	return `${actionType}_${stateKey}`
 }
 
-export default function createCRUDActions(stateKey, conf = {}) {
+export function createCRUDActions(stateKey, conf = {}) {
 	const { asyncAdd, asyncEdit, asyncDelete } = conf
 
 	return {

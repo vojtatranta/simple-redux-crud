@@ -1,48 +1,22 @@
 import expect from 'expect';
-import * as types from '../../constants/ActionTypes';
-import * as actions from '../../actions/todos';
+import * as crudActions from '../../lib/actions';
+import { createStore } from 'redux';
+import thunk from 'redux-thunk';
 
-describe('todo actions', () => {
+const rootReducer = function(state, action) {
+  return state
+}
 
-  it('addTodo should create ADD_TODO action', () => {
-    expect(actions.addTodo('Use Redux')).toEqual({
-      type: types.ADD_TODO,
-      text: 'Use Redux'
-    });
-  });
+const store = createStore(rootReducer, {todos: []})
 
-  it('deleteTodo should create DELETE_TODO action', () => {
-    expect(actions.deleteTodo(1)).toEqual({
-      type: types.DELETE_TODO,
-      id: 1
-    });
-  });
+const actions = crudActions.createCRUDActions('todos')
 
-  it('editTodo should create EDIT_TODO action', () => {
-    expect(actions.editTodo(1, 'Use Redux everywhere')).toEqual({
-      type: types.EDIT_TODO,
-      id: 1,
-      text: 'Use Redux everywhere'
-    });
-  });
+describe('crud actions', () => {
 
-  it('completeTodo should create COMPLETE_TODO action', () => {
-    expect(actions.completeTodo(1)).toEqual({
-      type: types.COMPLETE_TODO,
-      id: 1
-    });
-  });
+  it('add should create ADD_todo action', () => {
+    let res = actions.add({isReduxGreat: true}, true, true)
+    console.log(res(store.dispatch))
+  })
 
-  it('completeAll should create COMPLETE_ALL action', () => {
-    expect(actions.completeAll()).toEqual({
-      type: types.COMPLETE_ALL
-    });
-  });
-
-  it('clearCompleted should create CLEAR_COMPLETED action', () => {
-    expect(actions.clearCompleted('Use Redux')).toEqual({
-      type: types.CLEAR_COMPLETED
-    });
-  });
-});
+})
 

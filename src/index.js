@@ -1,4 +1,4 @@
-import createCRUDActions from './actions'
+import { createCRUDActions } from './actions'
 import createCRUDReducer from './reducers'
 
 module.exports = {createCRUDActions, createCRUDReducer}

@@ -11,7 +11,7 @@
     "test": "test"
   },
   "scripts": {
-    "test": "npm test",
+    "test": "mocha --recursive --compilers js:babel/register",
     "compile": "babel -d ./lib/ ./src/",
     "prepublish": "npm run compile"
   },
@@ -21,7 +21,8 @@
     "crud"
   ],
   "dependencies": {
-    "redux": "^1.0.1"
+    "redux": "^1.0.1",
+    "redux-thunk": "^1.0.0"
   },
   "devDependencies": {
     "babel": "^5.8.23"
