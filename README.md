@@ -7,7 +7,7 @@ So I created this simple thing, hope you will like it.
 
 ## Installation
 ```js
-$ npm install react-simple-redux
+$ npm install simple-redux-crud
 ```
 And you have to have **thunk middleware** enabled in your app!!
 
